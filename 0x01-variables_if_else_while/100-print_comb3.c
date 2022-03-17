@@ -10,18 +10,23 @@
 
 int main(void)
 {
-	int d;
+	int i, j;
+	int n[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-	for (d = 0; d < 100; d++)
+	for (i = 0; i < 10; i++)
 	{
-		putchar((d / 10) + '0');
-		putchar((d % 10) + '0');
-		if (d != 99)
+		for (j = 0; j < 10; j++)
 		{
-			putchar(',');
-			putchar(' ');
+			if (n[i] < j)
+			{
+				putchar(n[i] + '0');
+				putchar(j + '0');
+				if ((i == 8) && (j == 9))
+					break;
+				putchar(',');
+				putchar(' ');
+			}
 		}
 	}
-	putchar('\n');
 	return (0);
 }
